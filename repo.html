@@ -1,0 +1,19 @@
+<!-- repo.html -->
+  <div>
+    <h2>{{repo.name}} by {{user.login}}</h2>
+    <img ng-src="{{user.avatar_url}}" title="{{user.login}}">
+    <p><strong>Description</strong>: {{repo.description}}</p>
+    <p><strong>Main Language</strong>: {{repo.language}}</p>
+    <br/>
+    <h3>Repository Star Gazers ({{repo.repoCollaborators.length}})</h3>
+    <ul ng-show="repo.repoCollaborators.length">
+      <li ng-repeat="coll in repo.repoCollaborators | orderBy:'+login'">
+        <img ng-src="{{coll.avatar_url}}" title="{{coll.login}}">
+        <a href="{{coll.html_url}}">{{coll.login}}</a><br/>
+      </li>
+    </ul>
+
+    <div ng-hide="repo.repoCollaborators.length">No people to show</div>
+    <a href="#/main">Back to search</a>&nbsp;
+    <a href="#/user/{{user.login}}">Back to user</a>
+  </div>
