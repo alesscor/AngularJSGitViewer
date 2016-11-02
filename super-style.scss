@@ -1,0 +1,29 @@
+/* super-style.scss */
+
+$baseColor: #B37C2E;
+
+html{
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: lighten($baseColor, 20%);
+}
+
+header {
+  background-color: lighten($baseColor, 30%);
+  color: $baseColor;
+}
+
+input,select{
+  background-color: lighten($baseColor, 30%);
+}
+
+a.cmd{
+  display: inline-block;
+  padding: 5px;
+  background-color: lighten($baseColor, 30%);
+  border-top: 1px solid lighten($baseColor, 30%);
+  border-left: 1px solid lighten($baseColor, 30%);
+  border-bottom: 1px solid darken($baseColor, 30%);
+  border-right: 1px solid darken($baseColor, 30%);
+  text-decoration: none;
+  color: darken($baseColor, 40%);
+}
