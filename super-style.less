@@ -1,6 +1,8 @@
 /* super-style.less */
 
+/* example of "variable" declaration, they are labels actually */
 @baseColor: #B37C2E;
+
 .clearColor{
   background-color: lighten(@baseColor, 30%);
 }
@@ -11,6 +13,7 @@ html{
 }
 
 header {
+  /* example of mixin's usage */
   .clearColor;
   color: @baseColor;
 }
@@ -19,14 +22,15 @@ input,select{
   .clearColor;
 }
 
-a.cmd{
-  display: inline-block;
-  padding: 5px;
-  background-color: lighten(@baseColor, 30%);
-  border-top: 1px solid lighten(@baseColor, 30%);
-  border-left: 1px solid lighten(@baseColor, 30%);
-  border-bottom: 1px solid darken(@baseColor, 30%);
-  border-right: 1px solid darken(@baseColor, 30%);
-  text-decoration: none;
-  color: darken(@baseColor, 40%);
+/* example of nested styles */
+.commands{
+    a {
+      display: inline-block;
+      padding: 5px;
+      background-color: lighten(@baseColor, 30%);
+      border: solid 1px;
+      border-color: lighten(@baseColor, 30%) darken(@baseColor, 30%) darken(@baseColor, 30%) lighten(@baseColor, 30%);
+      text-decoration: none;
+      color: darken(@baseColor, 40%);
+    }
 }
