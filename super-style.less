@@ -1,6 +1,9 @@
 /* super-style.less */
 
 @baseColor: #B37C2E;
+.clearColor{
+  background-color: lighten(@baseColor, 30%);
+}
 
 html{
   font-family: Helvetica, Arial, sans-serif;
@@ -8,12 +11,12 @@ html{
 }
 
 header {
-  background-color: lighten(@baseColor, 30%);
+  .clearColor;
   color: @baseColor;
 }
 
 input,select{
-  background-color: lighten(@baseColor, 30%);
+  .clearColor;
 }
 
 a.cmd{
