@@ -2,31 +2,35 @@
 
 /* example of "variable" declaration, they are labels actually */
 @baseColor: #B37C2E;
+@baseMargin: 10px;
 
-.clearColor{
-  background-color: lighten(@baseColor, 30%);
+.clearColor(@oneColor:@baseColor){
+  background-color: lighten(@oneColor, 30%);
 }
 
 html{
   font-family: Helvetica, Arial, sans-serif;
   background-color: lighten(@baseColor, 20%);
+  margin-left: @baseMargin;
 }
 
 header {
   /* example of mixin's usage */
-  .clearColor;
+  .clearColor(@baseColor);
   color: @baseColor;
+  margin-left: -@baseMargin;
 }
 
 input,select{
-  .clearColor;
+  .clearColor(@baseColor);
 }
 
 /* example of nested styles */
 .commands{
     a {
       display: inline-block;
-      padding: 5px;
+      /* example of operations */
+      padding: @baseMargin/2;
       background-color: lighten(@baseColor, 30%);
       border: solid 1px;
       border-color: lighten(@baseColor, 30%) darken(@baseColor, 30%) darken(@baseColor, 30%) lighten(@baseColor, 30%);
